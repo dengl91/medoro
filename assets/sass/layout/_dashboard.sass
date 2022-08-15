@@ -1,0 +1,696 @@
+// 
+// Theme Name: New Clean Template
+// _dashboard.sass
+//
+// app/sass/layout/
+//
+
+.dashboard
+    min-height: 100vh
+    background: url(../img/dashboard__bg.png) no-repeat top 0 right 0
+    display: flex
+    margin: 0
+
+.menu
+    background: #313131
+    display: flex
+    flex-direction: column
+    align-items: center
+    flex: 0 0 98px
+    padding: 36px 0
+    position: relative
+    &.active
+        flex: 0 0 280px
+        .menu
+            &__logo
+                max-width: 280px
+            &__title
+                display: block
+    &__logo
+        max-width: 24px
+        overflow: hidden
+    &__group
+        width: 100%
+        height: 75%
+        max-height: 510px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-between
+        margin: 180px 0 auto 0
+        position: sticky
+        top: 36px
+    &__item
+        width: 100%
+        display: flex
+        padding: 10px 30px
+        .menu
+            &__title
+                color: #ffffff64
+        svg
+            fill: #ffffff64
+            path
+                fill: #ffffff64
+        &:hover
+            .menu
+                &__title
+                    color: #fff
+            svg
+                fill: #fff
+                path
+                    fill: #fff
+        &.active
+            .menu
+                &__title
+                    color: var(--main)
+            svg
+                fill: var(--main)
+                path
+                    fill: var(--main)
+    &__title
+        font-size: 14px
+        color: #fff
+        margin: 0 auto
+        display: none
+    &__btn
+        width: 26px
+        height: 26px
+        background: url(../img/icons/arrow__right.svg) no-repeat 50%
+        background-color: var(--main) !important
+        border-radius: 50%
+        box-shadow: 0 0 16px #A9A9A960
+        position: absolute
+        top: 36px
+        right: 0
+        transform: translate(50%, 4px)
+        cursor: pointer
+        &.active
+            background: url(../img/icons/arrow__left.svg) no-repeat 50%
+
+.content
+    flex: auto
+    padding: 30px
+
+.heading
+    display: flex
+    align-items: center
+    margin: 0 0 58px 0
+    &__middle
+        font-size: 14px
+        font-weight: 400
+        display: flex
+        align-items: center
+        margin: 0 0 0 auto
+
+.search
+    margin: 0 0 0 auto
+    &__form
+        display: flex
+        align-items: center
+        margin: 0 20px 0 0
+        position: relative
+        input
+            min-width: 230px
+            max-width: 320px
+            line-height: 52px
+            background: #f0f0f0
+            border: none
+            border-radius: 40px
+            padding: 0 64px 0 24px
+            &::placeholder
+                font-style: italic
+        button
+            width: 46px
+            height: 46px
+            background: #313131
+            border: none
+            border-radius: 50%
+            display: flex
+            align-items: center
+            justify-content: center
+            position: absolute
+            top: 3px
+            right: 3px
+            cursor: pointer
+            -webkit-appearance: none
+
+.notifications
+    width: 46px
+    height: 46px
+    background: #313131
+    border-radius: 50%
+    display: flex
+    flex: 0 0 46px
+    align-items: center
+    justify-content: center
+    margin: 0 20px 0 0
+    position: relative
+    cursor: pointer
+    &.active
+        &::after
+            content: ''
+            width: 9px
+            height: 9px
+            background: var(--main)
+            border-radius: 50%
+            position: absolute
+            top: 12px
+            right: 12px
+
+.pagination
+    color: var(--gray)
+    font-style: italic
+    margin: 0 12px
+
+.export
+    text-decoration: underline
+    background: url(../img/icons/file-excel.svg) no-repeat 0 2px
+    padding: 0 0 0 20px
+    margin: 0 12px
+
+.user
+    background: url(../img/icons/angle-down.svg) no-repeat top 50% right 20px #F0F0F0
+    border-radius: 40px
+    display: flex
+    align-items: center
+    padding: 3px 38px 3px 4px
+    cursor: pointer
+    &__icon
+        width: 46px
+        height: 46px
+        background: var(--main)
+        border-radius: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        margin: 0 15px 0 0
+
+.dbox
+    background: #fff
+    border-radius: 6px
+    box-shadow: 0px 0px 15px #a9a9a960
+    padding: 18px 14px
+    margin: 0 0 15px 0
+    &__head
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        margin: 0 0 15px 0
+    &__icon
+        width: 46px
+        height: 46px
+        border-radius: 50%
+        display: flex
+        flex: 0 0 46px
+        align-items: center
+        justify-content: center
+        margin: 0 10px 0 0
+        &.new
+            background: var(--new)
+        &.pink
+            background: #F2B7A5
+        &.violet
+            background: #DEA5F2
+        &.green
+            background: var(--status__good)
+        &.l-yellow
+            background: #F2EAA5
+    &__title
+        font-size: 20px
+        font-weight: 600
+        margin: 0 30px 0 0
+    &__row
+        line-height: 48px
+        border: 1px solid var(--gray)
+        border-radius: 6px
+        display: flex
+        justify-content: space-between
+        padding: 0 20px
+        margin: 0 0 6px 0
+        span
+            &:last-child
+                font-weight: 600
+    &__side
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        margin: 16px 0 0 0
+    &__img
+        width: 100%
+        max-width: 100%
+        height: auto
+    &__sround
+        width: 324px
+        height: 324px
+        border-radius: 50%
+        margin: 0 auto 64px auto
+        position: relative
+        &::after
+            content: ''
+            width: 220px
+            height: 220px
+            background: #fff
+            border-radius: 50%
+            position: absolute
+            top: 52px
+            left: 52px
+
+.info
+    &__item
+        background: #fff
+        border-radius: 6px
+        box-shadow: 0 0 16px #A9A9A964
+        padding: 26px 30px
+        margin: 0 0 20px 0
+        position: relative
+        &::after
+            content: ''
+            width: 7px
+            height: 100%
+            background: #fff
+            border-radius: 6px 0 0 6px
+            position: absolute
+            top: 0
+            left: 0
+        &.peach
+            &::after
+                background: #F2B7A5
+        &.blue
+            &::after
+                background: #4E89E2
+        &.lblue
+            &::after
+                background: #A5BAF2
+        &.yellow
+            &::after
+                background: #F2EAA5
+        &.violet
+            &::after
+                background: #DEA5F2
+        &.green
+            &::after
+                background: #AACD86
+        &.icon
+            &--card
+                background: url(../img/icons/card--peach.svg) no-repeat top 30px right 30px #fff
+                &--blue
+                    background: url(../img/icons/card--blue.svg) no-repeat top 30px right 30px #fff
+            &--list
+                background: url(../img/icons/list--blue.svg) no-repeat top 30px right 30px #fff
+            &--info
+                background: url(../img/icons/info--violet.svg) no-repeat top 30px right 30px #fff
+            &--write
+                background: url(../img/icons/write--green.svg) no-repeat top 30px right 30px #fff
+            &--certificate
+                background: url(../img/icons/certificate--peach.svg) no-repeat top 30px right 30px #fff
+            &--timeline
+                background: url(../img/icons/timeline--blue.svg) no-repeat top 30px right 30px #fff
+    &__title
+        font-size: 20px
+        font-weight: 600
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin: 0 0 16px 0
+    &__hint
+        margin: 0 0 24px 0
+        b
+            font-weight: 600
+
+.stable
+    width: 100%
+    font-family: 'Roboto', sans-serif
+    font-size: 12px
+    border-collapse: collapse
+    table-layout: fixed
+    border-style: hidden
+    border-radius: 6px
+    box-shadow: 0 0 16px #A8A8A84d
+    thead
+        font-weight: 600
+    tr
+        td
+            height: 40px
+            text-align: center
+            line-height: 18px
+            border: 1px solid var(--stroke)
+            padding: 6px 10px
+            &.align-left
+                text-align: left
+        &.borderless
+            td
+                border-left: none
+                border-right: none
+    tfoot
+        color: #fff
+        background: #3D3D3D
+        border-radius: 6px
+
+.state
+    color: #fff
+    font-weight: 600
+    text-align: center
+    line-height: 30px
+    background: #3D3D3D
+    border-radius: 6px
+    padding: 0 10px
+    margin: 0 4px
+    &:first-child
+        margin-left: 0
+    &.approved
+        background: var(--status__complete)
+    &.active
+        background: var(--status__complete)
+    &.deposit
+        background: var(--text)
+    &.response
+        color: var(--text)
+        white-space: nowrap
+        background: var(--main)
+    &.expired
+        background: var(--text)
+    &.lost
+        background: #990F0F
+    &.review
+        background: #B1B50E
+    &.process
+        background: #6C87CD
+    &.accepted
+        background: #6BB50E
+    &.won
+        background: #6C9ECD
+
+.timeline
+    &__item
+        padding: 0 0 20px 42px
+        position: relative
+        &::before
+            content: ''
+            width: 14px
+            height: 14px
+            background: #3D3D3D
+            border: 1px solid var(--stroke)
+            border-radius: 50%
+            position: absolute
+            top: 6px
+            left: 0
+            z-index: 1
+        &::after
+            content: ''
+            width: 1px
+            height: 100%
+            background: #3D3D3D
+            position: absolute
+            top: 6px
+            left: 8px
+        &:last-child
+            &::after
+                display: none
+    &__head
+        min-height: 30px
+        display: flex
+        align-items: center
+        gap: 10px
+        margin: 0 0 6px 0
+    &__content
+        font-size: 12px
+        background: var(--stroke)
+        border-radius: 6px
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        padding: 18px
+        margin: 15px 0 0 0
+    &__dl
+        background: url(../img/icons/file-pdf.svg) no-repeat 15px 50% #fff
+        border-radius: 6px
+        padding: 10px 30px 10px 42px
+        margin: 15px 0 0 0
+        &:hover
+            opacity: 0.75
+
+.step
+    border: 1px solid var(--stroke)
+    border-radius: 6px
+    display: flex
+    padding: 12px 16px
+    margin: 0 0 8px 0
+    &__num
+        margin: 0 12px 0 0
+    &__title
+        font-weight: 600
+    &__dl
+        width: 16px
+        height: 16px
+        background: url(../img/icons/download.svg) no-repeat 50%
+        margin: 0 0 0 auto
+        cursor: pointer
+    &__link
+        width: 16px
+        height: 16px
+        background: url(../img/icons/link.svg) no-repeat 50%
+        margin: 0 0 0 auto
+        cursor: pointer
+
+.swrap
+    min-height: 40px
+    border: 1px solid var(--stroke)
+    border-radius: 6px
+    display: flex
+    align-items: center
+    padding: 0 16px
+    margin: 0 0 8px 0
+    &--gray
+        background: var(--stroke)
+    &__item
+        display: flex
+        align-items: center
+        flex: 1 1 0
+        &--small
+            flex: 0 0 140px
+        &:first-child
+            font-weight: 600
+    .select
+        &__custom
+            width: auto
+            margin: 0
+    .select-selected
+        line-height: 28px
+        margin: 0
+    .select-items
+        div
+            line-height: 28px
+
+.textfield
+    textarea
+        width: 100%
+        height: 132px
+        font-family: 'Roboto', sans-serif
+        border: 1px solid var(--stroke)
+        border-radius: 6px
+        padding: 15px
+        margin: 0 0 8px 0
+        resize: none
+    &__file
+        background: url(../img/icons/file-pdf.svg) no-repeat 15px 50% #fff
+        border: 1px solid var(--stroke)
+        border-radius: 6px
+        padding: 10px 30px 10px 42px
+        margin: 15px 0 0 0
+        display: inline-block
+        cursor: pointer
+        &:hover
+            opacity: 0.75
+    &__hint
+        margin: 0 0 8px 0
+
+.sidebar
+    color: #fff
+    background: #333
+    border-radius: 6px
+    padding: 17px
+    position: relative
+    z-index: 4
+    &__title
+        color: #fff
+        font-weight: 600
+        margin: 0 0 10px 0
+    input
+        color: #fff
+        background: none
+        border: 1px solid var(--sidebar)
+        &:focus
+            outline: none
+    .form
+        > input
+            margin: 0 0 10px 0
+    .select
+        &__custom
+            max-width: unset
+            margin: 0 0 10px 0
+    .select-selected
+        color: var(--gray)
+        line-height: 38px
+        background: url(../img/icons/arrow__down--w.svg) no-repeat top 50% right 18px
+        border: 1px solid var(--sidebar)
+    .select-items
+        color: var(--gray)
+        background: #333
+        border: 1px solid var(--sidebar)
+        div
+            &:hover
+                background: #1a1a1a
+            &.same-as-selected
+                background: #1a1a1a
+
+.table
+    width: 100%
+    border-collapse: collapse
+    thead
+        font-size: 12px
+        font-weight: 600
+        tr
+            td
+                padding: 12px
+    tbody
+        font-size: 12px
+        tr
+            background: #fff
+            td
+                vertical-align: top
+                border: 1px solid var(--stroke)
+                padding: 12px
+                &.mastercard
+                    background: url(../img/icons/mastercard.png) no-repeat 12px 12px
+                    padding-left: 52px
+    &__pbody
+        td
+            &:nth-child(4)
+                padding-left: 52px
+    &__id
+        color: #C2A404
+    &__good
+        color: #fff
+        background: var(--status__good)
+        border-radius: 6px
+        padding: 6px 8px
+        margin: 0 0 6px 0
+    &__vgood
+        color: #fff
+        text-align: center
+        background: var(--status__complete)
+        border-radius: 6px
+        padding: 6px 8px
+        margin: 0 0 6px 0
+    &__bad
+        color: #fff
+        background: var(--status__bad)
+        border-radius: 6px
+        padding: 6px 8px
+        margin: 0 0 6px 0
+    .select-selected
+        line-height: 28px
+    .select-items
+        div
+            line-height: 28px
+            padding: 0 18px
+    input
+        &[type=checkbox]
+            width: 20px
+            height: 20px
+            background: #fff
+            border: 1px solid var(--stroke)
+            border-radius: 4px
+            padding: 0
+            margin: 0
+            cursor: pointer
+            -webkit-appearance: none
+            &:checked
+                background: url(../img/icons/check--w.svg) no-repeat 50% #3D3D3D
+                border-color: #3D3D3D
+    &__dl
+        font-weight: 600
+        line-height: 28px
+        border: 1px solid #3D3D3D
+        background: url(../img/icons/download--alt.svg) no-repeat top 50% right 10px
+        border-radius: 6px
+        padding: 0 30px 0 10px
+        display: inline-block
+    &__link
+        min-width: 92px
+        font-weight: 600
+        line-height: 28px
+        border: 1px solid #3D3D3D
+        background-image: url(../img/icons/download--alt.svg)
+        background-repeat: no-repeat
+        background-position: top 50% right 10px
+        border-radius: 6px
+        padding: 0 30px 0 10px
+        margin: 0 4px
+        display: inline-block
+        &.edit
+            background-image: url(../img/icons/edit.svg)
+        &.keys
+            background-image: url(../img/icons/key.svg)
+        &.payments
+            background-image: url(../img/icons/card.svg)
+        &.batches
+            background-image: url(../img/icons/timeline.svg)
+
+.available
+    color: #fff
+    background: #333
+    border-radius: 6px
+    padding: 36px 16px
+    margin: 10px 0
+    &__title
+        font-size: 20px
+        color: #fff
+        font-weight: 600
+        margin: 0 0 15px 0
+    &__amount
+        font-family: 'Roboto', sans-serif
+        font-size: 40px
+        font-weight: 300
+        line-height: 60px
+    &__btn
+        color: var(--main)
+        text-decoration: underline
+        cursor: pointer
+
+@media (max-width: 1440px)
+    .table
+        zoom: 0.9
+        tbody
+            tr
+                td
+                    overflow: auto
+                    &:last-child
+                        overflow: hidden
+        &__pbody
+            td
+                &:nth-child(4)
+                    padding-top: 52px
+                    padding-left: 12px
+
+    .stable
+        zoom: 0.9
+
+    .dbox
+        &__title
+            font-size: 18px
+            line-height: 20px
+
+@media (max-width: 1320px)
+    .table
+        zoom: 0.8
+
+    .stable
+        zoom: 0.8
+
+@media (max-width: 1200px)
+    .dbox
+        &__title
+            font-size: 14px
+            line-height: 16px

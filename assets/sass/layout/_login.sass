@@ -1,0 +1,37 @@
+// 
+// Theme Name: New Clean Template
+// _login.sass
+//
+// app/sass/layout/
+//
+
+.login
+    height: 700px
+    background: $grad, url(../img/login__bg.png) no-repeat 50%
+    background-size: cover
+    margin: 0
+    .container
+        display: flex
+        align-items: center
+        justify-content: center
+    &__box
+        width: 100%
+        max-width: 380px
+        background: #fff
+        border-radius: 6px
+        padding: 30px 32px
+    h1
+        font-size: 24px
+        font-weight: 600
+        line-height: 1
+        margin: 20px 0 34px 0
+        position: relative
+        &::after
+            content: ''
+            width: 10px
+            height: 52px
+            background: var(--main)
+            position: absolute
+            top: -20px
+            left: 0
+            mix-blend-mode: multiply

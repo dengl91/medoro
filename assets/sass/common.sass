@@ -1,0 +1,168 @@
+// Theme Name: New Clean Template
+// Version: 3.6
+// Tags: clean, development, html5, sass, jquery, slick.js
+// Description: Clean wordpress theme with slick and visible js function
+// Author: DHL
+// Author URI: telegram @dhljob
+//
+
+:root
+    --font-family: 'Stag Sans', sans-serif
+    --font-size: 14px
+    --line-height: 1.5
+    --text: #313131
+    --text__light: #C9C9C9
+    --header__height: 100px
+    --main: #ECC809
+    --red: #990F0F
+    --yellow: #FCD60D
+    --lime: #B1B50E
+    --green: #6BB50E
+    --new: #6C9ECD
+    --blue: #100EFB
+    --blue__pale: #6C87CD
+    --green: #16CB9C
+    --green__pale: #26B6BD
+    --green__light: #1BCCD2
+    --red: #EB5757
+    --orange: #F2C94C
+    --purple: #662D91
+    --purple__deep: #5048A5
+    --bg: #F5F5F5
+    --stroke: #DFDFDF
+    --btn__offset: 0 24px 0 0
+    --btn__radius: 42px
+    --main: #FCD60D
+    --stroke: #e0e0e0
+    --sidebar: #585858
+    --gray: #8A8A8A
+    --brown: #BAAE97
+    --topbar: #798486
+    --menu: #1a1a1a
+    --footer: #3E4140
+    --status__good: #AACD86
+    --status__complete: #749F48
+    --status__alert: #990F0F
+    --status__bad: #DD8E8E
+
+$grad: linear-gradient(to right, var(--main), #4E89E200)
+
+@mixin heading($tag)
+    font-weight: 400
+    letter-spacing: -0.05em
+    @if $tag == 3
+        font-size: 40px
+        line-height: 1.6
+    @if $tag == 4
+        font-size: 32px
+        line-height: 1.3
+    @if $tag == 5
+        font-size: 24px
+        line-height: 1.6
+
+@for $tag from 3 through 5
+    h#{$tag}
+        @include heading($tag)
+
+@font-face
+    font-family: "Stag Sans"
+    src: url("../fonts/StagSans-Regular.woff2") format("woff2")
+    font-weight: normal
+
+@font-face
+    font-family: "Stag Sans"
+    src: url("../fonts/StagSans-SemiBold.woff2") format("woff2")
+    font-weight: 600
+
+@font-face
+    font-family: "Stag Sans"
+    src: url("../fonts/StagSans-Bold.woff2") format("woff2")
+    font-weight: 700
+
+html
+    scroll-behavior: smooth
+    
+body
+    font-family: var(--font-family)
+    font-size: var(--font-size)
+    color: var(--text)
+    line-height: var(--line-height)
+    background: #fff
+    padding: 0
+    margin: 0
+
+hr
+    background-color: #ccc
+    border: 0
+    height: 1px
+    margin-bottom: 1.5em
+a
+    color: inherit
+    text-decoration: none
+*
+    box-sizing: border-box
+
+.container
+    max-width: 1220px
+    height: 100%
+    padding: 0 20px
+    margin: 0 auto
+    position: relative
+
+.row
+    display: flex
+    flex-wrap: wrap
+    margin: 0 -15px
+
+.col
+    width: 100%
+
+[class^=col]
+    padding: 0 15px
+    > .row
+        margin: 0 -30px
+
+@for $width from 1 through 100
+    .col-#{$width}
+        width: #{$width} + '%'
+
+section
+    margin: 100px 0
+    &.green
+        background: var(--green__light)
+        padding: 100px 0
+        &:first-of-type
+            margin-top: 0
+        &:last-of-type
+            margin-bottom: 0
+
+.gray
+    background: var(--bg)
+
+[class$=img]
+    img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+[data-bg]
+    background-repeat: no-repeat
+    background-position: 50%
+    background-size: cover
+    &.contain
+        background-size: contain
+
+[class^=col]
+    &:last-child
+        [class$=item]
+            border: none
+
+
+
+@import layout/header
+@import layout/footer
+@import layout/banner
+@import layout/components
+@import layout/dashboard
+@import layout/login
+

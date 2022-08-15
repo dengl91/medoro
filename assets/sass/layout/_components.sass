@@ -1,0 +1,412 @@
+// 
+// Theme Name: New Clean Template
+// _components.sass
+//
+// app/sass/layout/
+//
+
+.form
+    display: flex
+    flex-direction: column
+    label
+        line-height: 1
+        margin: 0 0 10px 0
+        span
+            color: var(--text__light)
+    input
+        font-size: 14px
+        line-height: 40px
+        border: 1px solid var(--text)
+        border-radius: 6px
+        padding: 0 15px
+        margin: 0 0 24px 0
+        &.calendar
+            background: url(../img/icons/calendar--w.svg) no-repeat 15px 50%
+            padding-left: 40px
+    button
+        width: 200px
+        font-weight: 600
+        text-align: center
+        line-height: 50px
+        background: var(--main)
+        border: none
+        border-radius: 6px
+        margin: 0 0 20px 0
+        cursor: pointer
+        -webkit-appearance: none
+        &:hover
+            opacity: 0.75
+        &.apply
+            width: 100%
+            font-size: 14px
+            background: url(../img/icons/filter.svg) no-repeat 15px 50% var(--main)
+            margin: 0
+        &.sbtn
+            width: 40px
+            background: url(../img/icons/search--w.svg) no-repeat 50%
+            border: 1px solid #585858
+            border-left: none
+            flex: 0 0 40px
+    &__group
+        display: flex
+        margin: 0 0 10px 0
+        input
+            max-width: 50%
+            flex: 1 1 0
+            border-radius: 6px 0 0 6px
+            margin: 0
+            &:focus
+                outline: none
+            &:last-child
+                border-left: none
+                border-radius: 0 6px 6px 0
+        label
+            text-align: center
+            line-height: 40px
+            background: #F0F0F0
+            border: 1px solid #585858
+            border-left: none
+            border-radius: 0 6px 6px 0
+            flex: 1 1 0
+            margin: 0
+        button
+            border-radius: 0 6px 6px 0
+            margin: 0
+        &--search
+            margin: 0 0 30px 0
+            &:last-child
+                margin: 0
+            input
+                max-width: calc(100% - 40px)
+    &__btns
+        display: flex
+        gap: 20px
+        button
+            flex: 1 1 0
+            margin: 0
+    &__btn
+        font-weight: 600
+        text-align: center
+        line-height: 52px
+        background: #E2E2E2
+        border-radius: 6px
+        flex: 1 1 0
+        cursor: pointer
+        &:hover
+            opacity: 0.75
+        &--active
+            background: var(--main)
+            margin: 0 0 10px 0
+        + [class$=btn]
+            margin: 0 0 10px 0
+    &__fpass
+        line-height: 16px
+        text-decoration: underline
+        text-underline-position: under
+        background: url(../img/icons/lock.svg) no-repeat
+        padding: 0 0 0 24px
+    &__text
+        white-space: pre-line
+        margin: 0 0 16px 0
+    &__quickselect
+        min-height: 48px
+        font-size: 14px
+        color: var(--main)
+        font-weight: 600
+        text-align: center
+        line-height: 16px
+        border: 1px solid var(--main)
+        border-radius: 6px
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 10px 20px
+        margin: 0 0 10px 0
+        cursor: pointer
+        &:hover
+            color: var(--text)
+            background: var(--main)
+    &__backlink
+        font-size: 12px
+        color: var(--main)
+        line-height: 28px
+        background: url(../img/icons/arrow__left--w.svg) no-repeat 0 50%
+        padding: 0 10px 0 24px
+        margin: 0 0 16px 0
+
+.input
+    &__wrap
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin: 0 0 8px 0
+        label
+            max-width: 140px
+            flex: 1 1 0
+            margin: 0 10px 0 0
+        input
+            line-height: 38px
+            background: #fff
+            border: 1px solid #3D3D3D
+            border-radius: 6px
+            flex: 1 1 0
+            padding: 0 15px
+            &:read-only
+                background: #F0F0F0
+            &:focus
+                outline: none
+        .select
+            &__custom
+                max-width: unset
+                flex: 1 1 0
+                margin: 0
+    &__hint
+        font-size: 12px
+        line-height: 16px
+        padding: 0 0 0 150px
+        margin: 0 0 8px 0
+
+.filedropper
+    width: 100%
+    height: 164px
+    border: 1px solid #3D3D3D
+    border-radius: 6px
+    margin: 0 0 16px 0
+    position: relative
+    label
+        width: 100%
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        margin: 0
+        cursor: pointer
+    input
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        opacity: 0
+        cursor: pointer
+
+.paginator
+    display: flex
+    align-items: center
+    margin: 20px 0 0 0
+    &__item
+        width: 28px
+        height: 28px
+        text-align: center
+        line-height: 28px
+        border: 1px solid var(--stroke)
+        border-radius: 6px
+        margin: 0 10px 0 0
+        cursor: pointer
+        &.active
+            color: #fff
+            background: #3D3D3D
+    &__left
+        width: 28px
+        height: 28px
+        background: url(../img/icons/arrow__left--w.svg) no-repeat 50% #3D3D3D
+        border: 1px solid var(--stroke)
+        border-radius: 6px
+        margin: 0 10px 0 0
+        cursor: pointer
+    &__right
+        width: 28px
+        height: 28px
+        background: url(../img/icons/arrow__right--w.svg) no-repeat 50% #3D3D3D
+        border: 1px solid var(--stroke)
+        border-radius: 6px
+        margin: 0 10px 0 0
+        cursor: pointer
+
+.modal
+    width: 100%
+    height: 100vh
+    background: #0000004d
+    display: none
+    align-items: center
+    justify-content: center
+    padding: 30px
+    backdrop-filter: blur(4px)
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 9
+    &.active
+        display: flex
+    &--align
+        align-items: flex-end
+        justify-content: flex-end
+    &__container
+        width: 320px
+        background: #fff
+        border-radius: 6px
+        box-shadow: 0 0 15px #A8A8A84d
+        padding: 24px 30px
+    &__title
+        font-size: 20px
+        font-weight: 600
+        margin: 0 0 15px 0
+
+.empty
+    &__content
+        background: #fff
+        border: 1px solid var(--stroke)
+        border-radius: 6px
+        box-shadow: 0 0 16px #A8A8A84d
+        display: flex
+        align-items: center
+        padding: 20px 24px
+    &__title
+        font-size: 20px
+        font-weight: 600
+    &__icon
+        width: 46px
+        height: 46px
+        background: var(--stroke)
+        border-radius: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        margin: 0 10px 0 0
+
+.message
+    width: 300px
+    font-size: 16px
+    color: #fff
+    line-height: 18px
+    border-radius: 6px
+    box-shadow: 0 0 15px #0000004d
+    padding: 20px 28px 20px 80px
+    position: fixed
+    right: 30px
+    bottom: 30px
+    z-index: 9
+    &--alert
+        background: url(../img/icons/alert--w.svg) no-repeat 28px 50% var(--status__alert)
+
+.social
+    display: flex
+    &__item
+        margin: 0 20px 0 0
+
+.email
+    font-size: 14px
+    font-weight: 600
+    line-height: 16px
+    background: url(../img/icons/email--y.svg) no-repeat 0 2px
+    padding: 0 0 0 30px
+
+.tab
+    &__content
+        display: flex
+        margin: 0 0 16px 0
+        &.single
+            margin-right: 20px
+            .tab
+                &__item
+                    border-radius: 6px
+        &--streched
+            > div
+                flex-grow: 1
+    &__item
+        text-align: center
+        border: 1px solid #DFDFDF !important
+        line-height: 28px
+        white-space: nowrap
+        padding: 0 20px
+        cursor: pointer
+        &.active
+            color: var(--main)
+            background: #313131
+        &:first-child
+            border-radius: 6px 0 0 6px
+        &:last-child
+            border-radius: 0 6px 6px 0
+
+.select
+    &__custom
+        width: 100%
+        max-width: 210px
+        color: var(--text)
+        margin: 0 20px 0 0
+        position: relative
+        select
+            display: none
+        &--highlighted
+            .select-selected
+                color: #fff !important
+                position: relative
+                z-index: 1
+                &::before
+                    content: ''
+                    width: 100px
+                    height: 20px
+                    background: url(../img/icons/close.svg) no-repeat top 50% right 10px var(--status__complete)
+                    border-radius: 10px
+                    position: absolute
+                    top: 8px
+                    left: 8px
+                    z-index: -1
+        &--readonly
+            pointer-events: none !important
+            .select-selected
+                background-color: #F0F0F0
+
+.select-selected.select-arrow-active
+    border-radius: 6px 6px 0 0
+    z-index: 9
+.select-selected.select-arrow-active + .select-items
+    z-index: 8
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after
+    border-width: 7px 0px 7px 8px
+    border-color: transparent transparent transparent var(--green)
+    top: 24px
+    right: 26px
+
+/*style the items (options), including the selected item:*/
+.select-selected
+    width: 100%
+    line-height: 38px
+    white-space: nowrap
+    background: url(../img/icons/angle-down.svg) no-repeat top 50% right 18px #fff
+    border: 1px solid #313131
+    border-radius: 6px
+    padding: 0 32px 0 18px
+    position: relative
+    z-index: 3
+    cursor: pointer
+    user-select: none
+
+/*style items (options):*/
+.select-items
+    width: 100%
+    background: #fff
+    border: 1px solid #313131
+    border-top: none !important
+    border-radius: 0 0 6px 6px
+    position: absolute
+    top: 100%
+    left: 0
+    right: 0
+    z-index: 1
+    overflow: hidden
+
+.select-items div
+    line-height: 40px
+    padding: 0 24px
+    cursor: pointer
+    user-select: none
+
+/*hide the items when the select box is closed:*/
+.select-hide
+  display: none
+
+.select-items div:hover, .same-as-selected
+    background: #F0F0F0
