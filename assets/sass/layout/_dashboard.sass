@@ -10,6 +10,13 @@
     background: url(../img/dashboard__bg.png) no-repeat top 0 right 0
     display: flex
     margin: 0
+    &__title
+        font-size: 20px
+        font-weight: 600
+        line-height: 24px
+        margin: 0 0 10px 0
+        &:first-child
+            margin: 0 0 20px 0
 
 .menu
     background: #313131
@@ -205,6 +212,8 @@
         align-items: center
         justify-content: center
         margin: 0 10px 0 0
+        &.main
+            background: var(--main)
         &.new
             background: var(--new)
         &.pink
@@ -617,6 +626,15 @@
         border-radius: 6px
         padding: 0 30px 0 10px
         display: inline-block
+    &__delete
+        color: #990F0F
+        font-weight: 600
+        line-height: 28px
+        border: 1px solid #990F0F
+        background: url(../img/icons/delete--red.svg) no-repeat top 50% right 10px
+        border-radius: 6px
+        padding: 0 30px 0 10px
+        display: inline-block
     &__link
         min-width: 92px
         font-weight: 600
@@ -637,6 +655,12 @@
             background-image: url(../img/icons/card.svg)
         &.batches
             background-image: url(../img/icons/timeline.svg)
+    &__ready
+        width: 28px
+        height: 28px
+        background: url(../img/icons/check--green.svg) no-repeat 50%
+        border: 1px solid #749F48
+        border-radius: 6px
 
 .available
     color: #fff
