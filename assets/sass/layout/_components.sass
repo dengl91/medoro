@@ -24,7 +24,6 @@
             background: url(../img/icons/calendar--w.svg) no-repeat 15px 50%
             padding-left: 40px
     button
-        min-width: 200px
         font-weight: 600
         text-align: center
         line-height: 50px
@@ -60,6 +59,8 @@
             &:last-child
                 border-left: none
                 border-radius: 0 6px 6px 0
+            .modal--align &
+                min-width: 75%
         label
             text-align: center
             line-height: 40px
@@ -384,10 +385,11 @@
                 flex-grow: 1
     &__item
         text-align: center
+        background: #fff
         border: 1px solid #DFDFDF !important
         line-height: 28px
         white-space: nowrap
-        padding: 0 20px
+        padding: 0 15px
         cursor: pointer
         &.active
             color: var(--main)
@@ -479,3 +481,17 @@
 
 .select-items div:hover, .same-as-selected
     background: #F0F0F0
+
+@media (max-width: 1440px)
+    .input
+        &__wrap
+            .tab
+                &__item
+                    min-width: 100px
+
+@media (max-width: 1280px)
+    .input
+        &__wrap
+            .tab
+                &__item
+                    min-width: 80px

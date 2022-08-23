@@ -118,8 +118,6 @@ a
 
 [class^=col]
     padding: 0 15px
-    > .row
-        margin: 0 -30px
 
 @for $width from 1 through 100
     .col-#{$width}
@@ -155,6 +153,10 @@ section
 
 .mw-240
     max-width: 240px
+
+@media (max-width: 992px)
+    [class^=col]
+        width: 100%
 
 
 

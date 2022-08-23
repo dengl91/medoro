@@ -114,4 +114,10 @@ document.addEventListener('DOMContentLoaded', function () {
         };
     });
 
+    document.addEventListener('click', (e) => {
+        if ( e.target.closest('.sidebar__col') == null && e.target.closest('.filter__btn') == null ) {
+            document.querySelector('.sidebar__col').classList.remove('active')
+        }
+    })
+
 });
