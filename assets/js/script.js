@@ -27,6 +27,23 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    if( window.screen.width <= 1280 ){
+        const searchForm = document.querySelector('.search__form')
+
+        searchForm.addEventListener('click', (e) => {
+            if( !searchForm.classList.contains('active') ){
+                let content_width = document.querySelector('.content').offsetWidth - 60;
+                let notif_width = document.querySelector('.heading .notifications').offsetWidth + 20;
+                let user_width = document.querySelector('.heading .user').offsetWidth;
+                console.log(content_width);
+                console.log(notif_width);
+                console.log(user_width);
+                searchForm.classList.toggle('active')
+                searchForm.querySelector('input').style.width = content_width - notif_width - user_width + 'px';
+            }
+        })
+    }
+
     var x, i, j, l, ll, selElmnt, a, b, c;
     /*look for any elements with the class "custom-select":*/
     x = document.getElementsByClassName("select__custom");
@@ -114,10 +131,12 @@ document.addEventListener('DOMContentLoaded', function () {
         };
     });
 
-    document.addEventListener('click', (e) => {
-        if ( e.target.closest('.sidebar__col') == null && e.target.closest('.filter__btn') == null ) {
-            document.querySelector('.sidebar__col').classList.remove('active')
-        }
-    })
+    if( document.querySelector('.sidebar__col') ){
+        document.addEventListener('click', (e) => {
+            if ( e.target.closest('.sidebar__col') == null && e.target.closest('.filter__btn') == null ) {
+                document.querySelector('.sidebar__col').classList.remove('active')
+            }
+        })
+    }
 
 });

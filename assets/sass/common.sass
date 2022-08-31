@@ -111,13 +111,13 @@ a
 .row
     display: flex
     flex-wrap: wrap
-    margin: 0 -15px
+    margin: 0 -10px
 
 .col
     width: 100%
 
 [class^=col]
-    padding: 0 15px
+    padding: 0 10px
 
 @for $width from 1 through 100
     .col-#{$width}
@@ -153,6 +153,11 @@ section
 
 .mw-240
     max-width: 240px
+
+@media (max-width: 1200px)
+    @for $width from 1 through 100
+        .col-pad-#{$width}
+            width: #{$width} + '%'
 
 @media (max-width: 992px)
     [class^=col]

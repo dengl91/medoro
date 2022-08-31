@@ -9,7 +9,9 @@
     min-height: 100vh
     background: url(../img/dashboard__bg.png) no-repeat top 0 right 0
     display: flex
+    padding: 0 0 0 92px
     margin: 0
+    position: relative
     &__title
         font-size: 20px
         font-weight: 600
@@ -19,18 +21,22 @@
             margin: 0 0 20px 0
 
 .menu
+    width: 92px
+    height: 100%
     background: #313131
     display: flex
     flex-direction: column
-    flex: 0 0 98px
     padding: 36px 0
-    position: relative
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 4
     &.active
-        flex: 0 0 280px
+        width: 280px
         .menu
             &__logo
                 max-width: 280px
-                padding: 0 0 0 37px
+                padding: 0 0 0 34px
                 margin: unset
             &__title
                 display: block
@@ -46,7 +52,7 @@
         flex-direction: column
         align-items: center
         justify-content: space-between
-        margin: 180px 0 auto 0
+        margin: 180px 0 0 0
         position: sticky
         top: 36px
     &__item
@@ -278,6 +284,52 @@
             top: 52px
             left: 52px
 
+.legend
+    display: flex
+    flex-direction: column
+    align-items: center
+    &__item
+        display: flex
+        align-items: center
+        margin: 0 0 20px 0
+    &__color
+        width: 30px
+        height: 30px
+        border: 1px solid #DFDFDF
+        border-radius: 6px 0 0 6px
+        position: relative
+        &::after
+            content: ''
+            width: 16px
+            height: 16px
+            background: #FCD50D
+            border-radius: 50%
+            position: absolute
+            top: 6px
+            left: 6px
+        &.yellow
+            &::after
+                background: #FCD50D
+        &.dark
+            &::after
+                background: #313131
+        &.blue
+            &::after
+                background: #6C87CD
+        &.lime
+            &::after
+                background: #B1B50E
+    &__title
+        min-width: 80px
+        text-align: center
+        line-height: 28px
+        border: 1px solid #DFDFDF
+        border-radius: 0 6px 6px 0
+        padding: 0 10px
+        margin: 0 15px 0 0
+    &__value
+        font-weight: 700
+
 .alert
     margin: 0 0 24px 0
     position: relative
@@ -326,21 +378,31 @@
         &.green
             &::after
                 background: #AACD86
+        &[class*=icon]
+            background-color: #fff
+            background-repeat: no-repeat
+            background-position: top 30px right 30px
         &.icon
             &--card
-                background: url(../img/icons/card--peach.svg) no-repeat top 30px right 30px #fff
+                background-image: url(../img/icons/card--peach.svg)
                 &--blue
-                    background: url(../img/icons/card--blue.svg) no-repeat top 30px right 30px #fff
+                    background-image: url(../img/icons/card--blue.svg)
+            &--user
+                background-image: url(../img/icons/user--peach.svg)
             &--list
-                background: url(../img/icons/list--blue.svg) no-repeat top 30px right 30px #fff
+                background-image: url(../img/icons/list--blue.svg)
             &--info
-                background: url(../img/icons/info--violet.svg) no-repeat top 30px right 30px #fff
+                background-image: url(../img/icons/info--violet.svg)
             &--write
-                background: url(../img/icons/write--green.svg) no-repeat top 30px right 30px #fff
+                background-image: url(../img/icons/write--green.svg)
             &--certificate
-                background: url(../img/icons/certificate--peach.svg) no-repeat top 30px right 30px #fff
+                background-image: url(../img/icons/certificate--peach.svg)
             &--timeline
-                background: url(../img/icons/timeline--blue.svg) no-repeat top 30px right 30px #fff
+                background-image: url(../img/icons/timeline--blue.svg)
+            &--cart
+                background-image: url(../img/icons/cart--peach.svg)
+            &--vcard
+                background-image: url(../img/icons/card--violet.svg)
     &__title
         font-size: 20px
         font-weight: 600
@@ -389,6 +451,7 @@
     font-weight: 600
     text-align: center
     line-height: 30px
+    white-space: nowrap
     background: #3D3D3D
     border-radius: 6px
     padding: 0 10px
@@ -405,6 +468,9 @@
         color: var(--text)
         white-space: nowrap
         background: var(--main)
+    &.cancel
+        color: var(--text)
+        background: #E5E5E5
     &.expired
         background: var(--text)
     &.lost
@@ -506,7 +572,7 @@
         align-items: center
         flex: 1 1 0
         &--small
-            flex: 0 0 140px
+            flex: 0 0 120px
         &:first-child
             font-weight: 600
     .select
@@ -550,6 +616,8 @@
     padding: 17px
     position: relative
     z-index: 4
+    &--nobg
+        background: none
     &__title
         color: #fff
         font-weight: 600
@@ -588,6 +656,8 @@
 
 .table
     border-spacing: 0 10px
+    &--stretched
+        width: 100%
     thead
         font-size: 12px
         font-weight: 600
@@ -616,6 +686,7 @@
                 padding-left: 52px
     &__id
         color: #C2A404
+        white-space: nowrap
     &__good
         color: #fff
         background: var(--status__good)
@@ -698,6 +769,8 @@
         background: url(../img/icons/check--green.svg) no-repeat 50%
         border: 1px solid #749F48
         border-radius: 6px
+    &__nowrap
+        white-space: nowrap
 
 .available
     color: #fff
@@ -722,82 +795,6 @@
 
 .filter
     display: none
-
-@media (max-width: 1280px)
-    .content
-        overflow: hidden
-
-    .user
-        &__icon
-            margin: 0
-        &__name
-            display: none
-
-    .table
-        width: 100%
-        tbody
-            tr
-                td
-                    word-break: break-word
-        &__col
-            width: 100%
-
-    .search
-        &__form
-            input
-                min-width: 40px
-                padding: 0 40px 0 15px
-
-    .filter
-        display: flex
-        justify-content: flex-end
-        margin: -40px 0 20px 0
-        &__btn
-            color: var(--main)
-            background: url(../img/icons/filter--y.svg) no-repeat 30px 50% var(--text)
-            border-radius: 6px
-            line-height: 50px
-            padding: 0 36px 0 52px
-            margin: 0 !important
-            cursor: pointer
-            &:hover
-                filter: brightness(1.1)
-        .form
-            &__btn
-                flex: unset
-                padding: 0 38px
-                margin: 0 10px 0 0
-
-    .sidebar
-        &__col
-            width: 260px
-            height: 100vh
-            background: var(--text)
-            padding: 0
-            position: fixed
-            top: 0
-            right: 0
-            z-index: 3
-            overflow: auto
-            transform: translateX(280px)
-            transition: 0.4s
-            &.active
-                transform: translateX(0)
-            .menu
-                &__btn
-                    background: url(../img/icons/arrow__right.svg) no-repeat 50% var(--main) !important
-                    border-radius: 0 50% 50% 0
-                    display: block
-                    position: fixed
-                    right: auto
-                    left: 0
-                    transform: translate(0, -50%)
-                    z-index: 4
-            > .form__btn
-                display: none
-
-    .available
-        margin: 0
 
 @media (max-width: 1600px)
     .dbox
@@ -848,11 +845,169 @@
     .stable
         zoom: 0.8
 
+@media (max-width: 1280px)
+    .content
+        padding: 30px 20px
+        overflow: hidden
+
+    .menu
+        &__group
+            margin: 100px 0 auto 0
+
+    .user
+        &__icon
+            margin: 0 10px 0 0
+        &__name
+            font-size: 12px
+
+    .table
+        width: 100%
+        tbody
+            tr
+                td
+                    word-break: break-word
+                    padding: 8px
+        &__col
+            width: 100%
+
+    .stable
+        white-space: nowrap
+        table-layout: auto
+        tr
+            td
+                padding: 6px 8px
+
+    .dbox
+        padding: 10px
+        &__icon
+            width: 30px
+            height: 30px
+            flex: 0 0 30px
+        &__title
+            margin: 0
+        &__row
+            padding: 0 10px
+        &__sround
+            width: 300px
+            height: 300px
+            margin: 0 auto 30px
+            &::after
+                width: 200px
+                height: 200px
+                top: 50px
+                left: 50px
+
+    .heading
+        .dbox
+            &__title
+                margin: 0 20px 0 0
+
+    .search
+        &__form
+            position: relative
+            input
+                width: 52px
+                min-width: 40px
+                max-width: unset
+                box-shadow: 0 0 0 10px #fff
+                padding: 0 20px
+                position: absolute
+                top: -3px
+                right: 0
+                z-index: 4
+            button
+                position: relative
+                top: 0
+                z-index: 6
+                pointer-events: none
+            &.active
+                button
+                    pointer-events: all
+
+    .info
+        &__item
+            &[class*=icon]
+                background-position: top 20px right 20px
+
+    .filter
+        display: flex
+        justify-content: flex-end
+        margin: -40px 0 20px 0
+        &__btn
+            color: var(--main)
+            background: url(../img/icons/filter--y.svg) no-repeat 30px 50% var(--text)
+            border-radius: 6px
+            line-height: 50px
+            padding: 0 36px 0 52px
+            margin: 0 !important
+            cursor: pointer
+            &:hover
+                filter: brightness(1.1)
+        .form
+            &__btn
+                flex: unset
+                padding: 0 38px
+                margin: 0 10px 0 0
+
+    .sidebar
+        &__col
+            width: 280px
+            height: 100vh
+            background: linear-gradient(to right, #ffffff00 15px, var(--text) 15px)
+            padding: 0 0 0 15px
+            position: fixed
+            top: 0
+            right: 0
+            z-index: 3
+            overflow: auto
+            transform: translateX(280px)
+            transition: 0.4s
+            &.active
+                transform: translateX(0)
+            .menu
+                &__btn
+                    background: url(../img/icons/arrow__right.svg) no-repeat 50% var(--main) !important
+                    display: block
+                    position: fixed
+                    right: auto
+                    left: 0
+                    transform: translate(0, -50%)
+                    z-index: 4
+            > .form__btn
+                display: none
+
+    .swrap
+        &__item
+            font-size: 12px
+            &:nth-child(2)
+                flex: 2 1 0
+
+    .available
+        padding-top: 0
+        margin: 0
+        &__title
+            line-height: 1
+            margin: 0 0 10px 0
+        &__btn
+            font-size: 12px
+
 @media (max-width: 1200px)
     .dbox
         &__title
             font-size: 14px
             line-height: 16px
+
+    .info
+        &__item
+            padding: 16px 16px 16px 24px
+
+    .table
+        tbody
+            tr
+                td.mastercard
+                    background: url(../img/icons/mastercard.png) no-repeat 12px 12px
+                    padding-top: 40px
+                    padding-left: 12px
 
 @media (max-width: 992px)
     .sidebar
