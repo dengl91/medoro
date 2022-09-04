@@ -109,7 +109,7 @@
 .heading
     display: flex
     align-items: center
-    margin: 0 0 58px 0
+    margin: 0 0 52px 0
     &__middle
         font-size: 14px
         font-weight: 400
@@ -654,6 +654,11 @@
             &__btn
                 display: none
 
+@media (min-width: 1280px)
+    .dl
+        &__col
+            flex: 0 0 720px
+
 .table
     border-spacing: 0 10px
     &--stretched
@@ -809,7 +814,6 @@
 
 @media (max-width: 1440px)
     .table
-        zoom: 0.9
         tbody
             tr
                 td
@@ -850,9 +854,22 @@
         padding: 30px 20px
         overflow: hidden
 
+    .heading
+        margin: 0 0 20px 0
+        .dbox
+            &__icon
+                width: 46px
+                height: 46px
+                flex: 0 0 46px
+            &__title
+                font-size: 20px
+
     .menu
         &__group
+            max-height: 400px
             margin: 100px 0 auto 0
+        &__title
+            margin: 0 0 0 15px
 
     .user
         &__icon
@@ -860,8 +877,16 @@
         &__name
             font-size: 12px
 
+    .state
+        display: inline-block
+
     .table
         width: 100%
+        thead
+            tr
+                td
+                    &.actions
+                        width: 256px
         tbody
             tr
                 td
@@ -869,6 +894,15 @@
                     padding: 8px
         &__col
             width: 100%
+        &__link
+            width: 100px
+            margin: 4px
+
+    .input
+        &__wrap
+            .tab
+                &__item
+                    flex: auto
 
     .stable
         white-space: nowrap
@@ -932,7 +966,7 @@
     .filter
         display: flex
         justify-content: flex-end
-        margin: -40px 0 20px 0
+        margin: 0 0 20px 0
         &__btn
             color: var(--main)
             background: url(../img/icons/filter--y.svg) no-repeat 30px 50% var(--text)
