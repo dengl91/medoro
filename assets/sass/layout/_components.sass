@@ -8,6 +8,9 @@
 .form
     display: flex
     flex-direction: column
+    &.disputes
+        button
+            max-width: 242px
     label
         line-height: 1
         margin: 0 0 10px 0
@@ -26,7 +29,7 @@
     button
         font-weight: 600
         text-align: center
-        line-height: 50px
+        line-height: 48px
         background: var(--main)
         border: none
         border-radius: 6px
@@ -38,7 +41,9 @@
         &.apply
             width: 100%
             font-size: 14px
-            background: url(../img/icons/filter.svg) no-repeat 15px 50% var(--main)
+            text-align: left
+            background: url(../img/icons/filter.svg) no-repeat 30px 50% var(--main)
+            padding: 0 10px 0 54px
             margin: 0
         &.sbtn
             width: 40px
@@ -46,6 +51,8 @@
             border: 1px solid #585858
             border-left: none
             flex: 0 0 40px
+        .login &
+            max-width: 210px
     &__group
         display: flex
         margin: 0 0 10px 0
@@ -503,6 +510,14 @@
     .form
         button
             max-width: 280px
+        &__btns
+            max-width: 100%
+
+    .dl
+        &__col
+            .form
+                button
+                    max-width: 242px
 
     .filedropper
         width: 142px

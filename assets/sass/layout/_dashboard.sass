@@ -116,6 +116,8 @@
         display: flex
         align-items: center
         margin: 0 0 0 auto
+    &.offset-bot
+        margin: 0 0 82px 0
 
 .search
     margin: 0 0 0 auto
@@ -567,6 +569,7 @@
     &--gray
         background: var(--stroke)
     &__item
+        line-height: 16px
         word-break: break-word
         display: flex
         align-items: center
@@ -591,11 +594,13 @@
         width: 100%
         height: 132px
         font-family: 'Roboto', sans-serif
-        border: 1px solid var(--stroke)
+        border: 1px solid #3D3D3D
         border-radius: 6px
         padding: 15px
         margin: 0 0 8px 0
         resize: none
+        &::placeholder
+            color: var(--text)
     &__file
         background: url(../img/icons/file-pdf.svg) no-repeat 15px 50% #fff
         border: 1px solid var(--stroke)
@@ -624,6 +629,7 @@
         margin: 0 0 10px 0
     input
         color: #fff
+        font-style: italic
         background: none
         border: 1px solid var(--sidebar)
         &:focus
@@ -634,6 +640,7 @@
     .select
         &__custom
             max-width: unset
+            font-style: italic
             margin: 0 0 10px 0
     .select-selected
         color: var(--gray)
@@ -653,6 +660,10 @@
         .menu
             &__btn
                 display: none
+
+.profile
+    &__col
+        flex: 0 0 700px
 
 @media (min-width: 1280px)
     .dl
@@ -833,8 +844,10 @@
 
     .dbox
         &__title
-            font-size: 18px
+            font-size: 17px
             line-height: 20px
+            letter-spacing: -0.02em
+            margin: 0
 
     .swrap
         &__item
@@ -853,7 +866,7 @@
 
 @media (max-width: 1280px)
     .content
-        padding: 30px 20px
+        padding: 26px 20px
         overflow: hidden
 
     .heading
@@ -880,6 +893,7 @@
             font-size: 12px
 
     .state
+        min-width: 104px
         display: inline-block
 
     .table
@@ -899,6 +913,12 @@
         &__link
             width: 100px
             margin: 4px
+        &.disputes
+            .state
+                width: 104px
+                line-height: 15px
+                white-space: unset
+                padding: 6px 10px
 
     .input
         &__wrap
@@ -915,23 +935,32 @@
 
     .dbox
         padding: 10px
+        margin: 0 0 10px 0
+        &.stretched
+            height: calc(100% - 15px)
         &__icon
             width: 30px
             height: 30px
             flex: 0 0 30px
         &__title
             margin: 0
+        &__img
+            max-height: 286px
         &__row
+            line-height: 38px
             padding: 0 10px
+            margin: 0 0 4px 0
+            &:last-child
+                margin: 0
         &__sround
-            width: 300px
-            height: 300px
+            width: 250px
+            height: 250px
             margin: 0 auto 30px
             &::after
-                width: 200px
-                height: 200px
-                top: 50px
-                left: 50px
+                width: 170px
+                height: 170px
+                top: 40px
+                left: 40px
 
     .heading
         .dbox
@@ -962,13 +991,15 @@
 
     .info
         &__item
+            &.stretched
+                height: calc(100% - 20px)
             &[class*=icon]
                 background-position: top 20px right 20px
 
     .filter
         display: flex
         justify-content: flex-end
-        margin: 0 0 20px 0
+        margin: 0 0 10px 0
         &__btn
             color: var(--main)
             background: url(../img/icons/filter--y.svg) no-repeat 30px 50% var(--text)
@@ -984,6 +1015,8 @@
                 flex: unset
                 padding: 0 38px
                 margin: 0 10px 0 0
+                &:last-child
+                    margin: 0
 
     .sidebar
         &__col
@@ -1044,6 +1077,16 @@
                     background: url(../img/icons/mastercard.png) no-repeat 12px 12px
                     padding-top: 40px
                     padding-left: 12px
+
+    .sidebar
+        &__col
+            width: 260px
+        &__title
+            font-size: 12px
+        input
+            line-height: 38px
+        &.offset-top
+            padding-top: 50px
 
 @media (max-width: 992px)
     .sidebar
