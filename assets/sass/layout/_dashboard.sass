@@ -470,6 +470,7 @@
 
 .state
     min-width: 104px
+    max-width: 110px
     color: #fff
     font-weight: 600
     text-align: center
@@ -481,6 +482,8 @@
     margin: 0 4px
     &:first-child
         margin-left: 0
+    &:last-child
+        margin-right: 0
     &.approved
         background: var(--status__complete)
     &.active
@@ -694,6 +697,7 @@
             flex: 0 0 720px
 
 .table
+    width: 100%
     border-spacing: 0 10px
     &--stretched
         width: 100%
@@ -706,10 +710,10 @@
     tbody
         font-size: 12px
         tr
-            background: #fff
             box-shadow: 0 0 16px #A8A8A84d
             td
                 vertical-align: top
+                background: #fff
                 border: 1px solid var(--stroke)
                 padding: 12px
                 &:first-child
@@ -859,7 +863,6 @@
         &__pbody
             td
                 &:nth-child(4)
-                    padding-top: 52px
                     padding-left: 12px
 
     .stable
@@ -871,6 +874,8 @@
             line-height: 20px
             letter-spacing: -0.02em
             margin: 0
+            .heading &
+                margin: 0 10px 0 0
 
     .swrap
         &__item
