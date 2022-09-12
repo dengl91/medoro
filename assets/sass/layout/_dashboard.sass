@@ -191,11 +191,17 @@
 
 .user
     background: url(../img/icons/angle-down.svg) no-repeat top 50% right 20px #F0F0F0
-    border-radius: 40px
+    border-radius: 28px
     display: flex
     align-items: center
     padding: 3px 38px 3px 4px
+    position: relative
     cursor: pointer
+    &.active
+        border-radius: 28px 28px 0 0
+        .user
+            &__menu
+                display: flex
     &__icon
         width: 46px
         height: 46px
@@ -205,6 +211,20 @@
         align-items: center
         justify-content: center
         margin: 0 15px 0 0
+    &__menu
+        width: 100%
+        line-height: 38px
+        background: #F0F0F0
+        border-radius: 0 0 28px 28px
+        display: none
+        flex-direction: column
+        padding: 0 10px 10px 64px
+        position: absolute
+        top: 100%
+        left: 0
+    &__link
+        &.active
+            font-weight: 600
 
 .dbox
     background: #fff
@@ -449,14 +469,15 @@
         border-radius: 6px
 
 .state
+    min-width: 104px
     color: #fff
     font-weight: 600
     text-align: center
-    line-height: 30px
+    line-height: 15px
     white-space: nowrap
     background: #3D3D3D
     border-radius: 6px
-    padding: 0 10px
+    padding: 8px 10px
     margin: 0 4px
     &:first-child
         margin-left: 0
@@ -478,6 +499,7 @@
     &.lost
         background: #990F0F
     &.review
+        white-space: pre-wrap
         background: #B1B50E
     &.process
         background: #6C87CD
@@ -597,7 +619,7 @@
         border: 1px solid #3D3D3D
         border-radius: 6px
         padding: 15px
-        margin: 0 0 8px 0
+        margin: 0
         resize: none
         &::placeholder
             color: var(--text)
@@ -623,6 +645,7 @@
     z-index: 4
     &--nobg
         background: none
+        padding-right: 0
     &__title
         color: #fff
         font-weight: 600
@@ -814,7 +837,7 @@
 .filter
     display: none
 
-@media (max-width: 1600px)
+@media (max-width: 1598px)
     .dbox
         &__side
             max-width: unset

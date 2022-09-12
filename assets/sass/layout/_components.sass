@@ -11,6 +11,9 @@
     &.disputes
         button
             max-width: 242px
+        .select
+            &__custom
+                margin: 0 0 16px 0
     label
         line-height: 1
         margin: 0 0 10px 0
@@ -116,8 +119,12 @@
         background: url(../img/icons/lock.svg) no-repeat
         padding: 0 0 0 24px
     &__text
-        white-space: pre-line
+        font-size: 12px
+        line-height: 16px
         margin: 0 0 16px 0
+        b
+            font-weight: 600
+            margin: 1px 0
     &__quickselect
         min-height: 48px
         font-size: 14px
@@ -152,6 +159,8 @@
         margin: 0 0 8px 0
         label
             max-width: 140px
+            font-size: 12px
+            font-weight: 600
             flex: 1 1 0
             margin: 0 10px 0 0
         input
