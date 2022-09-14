@@ -7,7 +7,7 @@
 
 :root
     --font-family: 'Stag Sans', sans-serif
-    --font-size: 14px
+    --font-size: 12px
     --line-height: 1.5
     --text: #313131
     --text__light: #C9C9C9
@@ -154,10 +154,17 @@ section
 .mw-240
     max-width: 240px
 
+.mb-10
+    margin-bottom: 10px !important
+
 @media (max-width: 1280px)
     @for $width from 1 through 100
         .col-pad-#{$width}
             width: #{$width} + '%'
+
+@media (max-width: 1200px)
+    :root
+        --header__height: 70px
 
 @media (max-width: 992px)
     [class^=col]
