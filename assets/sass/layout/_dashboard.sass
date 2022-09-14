@@ -662,13 +662,14 @@
     z-index: 4
     &--nobg
         background: none
-        padding-right: 0
+        padding: 0
     &__title
         color: #fff
         font-weight: 600
         margin: 0 0 10px 0
     &__col
-        width: 18%
+        width: 262px
+        flex: 0 0 262px
     input
         font-family: 'Roboto', sans-serif
         font-size: 12px
@@ -723,7 +724,8 @@
     &--stretched
         width: 100%
     &__col
-        width: 82%
+        max-width: calc(100% - 262px)
+        flex: auto
     thead
         font-size: 12px
         font-weight: 600
@@ -744,7 +746,7 @@
                 &:last-child
                     border-radius: 0 6px 6px 0
                 &.mastercard
-                    background: url(../img/icons/mastercard.png) no-repeat 12px 12px
+                    background: url(../img/icons/mastercard.png) no-repeat 12px 12px #fff
                     padding-left: 52px
     &__pbody
         td
@@ -877,6 +879,8 @@
 
 @media (max-width: 1440px)
     .table
+        &__col
+            overflow: auto
         tbody
             tr
                 td
@@ -966,6 +970,7 @@
                     padding: 8px
         &__col
             width: 100%
+            max-width: 100%
         &__link
             width: 100px
             margin: 4px
@@ -1057,10 +1062,11 @@
         justify-content: flex-end
         margin: 0 0 10px 0
         &__btn
+            font-size: 14px
             color: var(--main)
             background: url(../img/icons/filter--y.svg) no-repeat 30px 50% var(--text)
             border-radius: 6px
-            line-height: 50px
+            line-height: 52px
             padding: 0 36px 0 52px
             margin: 0 !important
             cursor: pointer
@@ -1130,7 +1136,7 @@
         tbody
             tr
                 td.mastercard
-                    background: url(../img/icons/mastercard.png) no-repeat 12px 12px
+                    background: url(../img/icons/mastercard.png) no-repeat 12px 12px #fff
                     padding-top: 40px
                     padding-left: 12px
 
